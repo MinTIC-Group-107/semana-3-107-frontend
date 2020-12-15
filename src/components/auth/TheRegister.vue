@@ -53,8 +53,8 @@ export default {
     return {
       form: {
         name: '',
-        email: 'luisprmat@hotmail.com',
-        password: '11413115'
+        email: '',
+        password: ''
       },
     }
   },

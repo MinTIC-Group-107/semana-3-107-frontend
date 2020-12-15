@@ -43,8 +43,8 @@ export default {
   data() {
     return {
       login: {
-        email: 'luisprmat@hotmail.com',
-        password: '11413115'
+        email: '',
+        password: ''
       },
     }
   },
@@ -77,7 +77,6 @@ export default {
         }
 
       } catch (error) {
-        // console.log(error.response.data.message)
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
