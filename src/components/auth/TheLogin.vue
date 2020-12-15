@@ -30,7 +30,7 @@
         <p class="card-text" v-else>Usted ya se encuentra autenticado</p>
       </div>
     </div>
-    <pre>{{ login }}</pre>
+    <!-- <pre>{{ login }}</pre> -->
 	</div>
 </template>
 
@@ -66,13 +66,16 @@ export default {
         localStorage.setItem('jwt', token)
 
         if(token) {
-          Swal.fire({
+          let result = await Swal.fire({
             icon: 'success',
             title: 'Bienvenid@ ' + this.getFirstWord(user.name),
             text: 'Te has autenticado correctamente',
           })
-          this.$router.push('/home')
+          if (result.isConfirmed) {
+            this.$router.push('/home')
+          }
         }
+
       } catch (error) {
         // console.log(error.response.data.message)
         Swal.fire({

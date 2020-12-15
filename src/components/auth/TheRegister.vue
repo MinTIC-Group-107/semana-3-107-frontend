@@ -23,6 +23,7 @@
               id="email"
               aria-describedby="emailHelp"
               v-model="form.email"
+              required
             >
           </div>
           <div class="mb-3">
@@ -32,13 +33,13 @@
               class="form-control"
               id="password"
               v-model="form.password"
+              required
             >
           </div>
           <button type="submit" class="btn btn-primary w-100 text-light">Enviar</button>
         </form>
       </div>
     </div>
-    <pre>{{ form }}</pre>
 	</div>
 </template>
 
