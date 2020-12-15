@@ -14,13 +14,16 @@
             <li class="nav-item">
               <router-link to="/" class="nav-link" exact>Login</router-link>
             </li>
+            <li class="nav-item">
+              <router-link to="/register" class="nav-link">Registro</router-link>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
-	<div class="container">
-		<router-view/>
-	</div>
+    <div class="container">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -28,7 +31,7 @@
 require('bootstrap')
 
 export default {
-	
+
 }
 </script>
 
