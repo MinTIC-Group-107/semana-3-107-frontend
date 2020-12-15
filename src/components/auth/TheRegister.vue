@@ -27,7 +27,7 @@
             >
           </div>
           <div class="mb-3">
-            <label for="password" class="form-label">Constraseña:</label>
+            <label for="password" class="form-label">Contraseña:</label>
             <input
               type="password"
               class="form-control"
@@ -36,7 +36,17 @@
               required
             >
           </div>
-          <button type="submit" class="btn btn-primary w-100 text-light">Enviar</button>
+          <div class="mb-3">
+            <label for="password" class="form-label">Confirmar contraseña:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password-confirm"
+              v-model="passwordConfirm"
+              required
+            >
+          </div>
+          <button type="submit" class="btn btn-primary w-100 text-light">Registrarse</button>
         </form>
       </div>
     </div>
@@ -51,6 +61,7 @@ export default {
   name: 'TheRegister',
   data() {
     return {
+      passwordConfirm: '',
       form: {
         name: '',
         email: '',
@@ -61,6 +72,14 @@ export default {
   methods: {
     async registerUser() {
       try {
+        if (this.form.password !== this.passwordConfirm) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Las contraseñas no coinciden'
+          })
+          return
+        }
         let response = await this.$http.post('/api/auth/register', this.form)
         console.log(response.data)
 
