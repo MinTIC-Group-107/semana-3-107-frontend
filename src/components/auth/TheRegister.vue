@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="card mt-3 col-md-6 mx-auto">
+    <div class="card mt-3 col-md-6 mx-auto mb-4">
       <div class="card-header">
         <h5 class="text-center">Registro</h5>
       </div>
